@@ -13,14 +13,6 @@ module.exports = {
     require('@tailwindcss/forms'),
     require('preline/plugin'),
     animations
-  ],
-  theme: {
-    extend: {
-      spacing: {
-        '128': '32rem',
-        '144': '36rem',
-      }
-    }
-  }
+  ]
 }
 
