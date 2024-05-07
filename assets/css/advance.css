@@ -1,0 +1,13 @@
+.hide {
+    display: none;
+}
+
+.show {
+    display: initial;
+}
+
+/** NavBar Styles **/
+#navbar_items {
+    padding: 20px;
+    font-weight: 700;
+}

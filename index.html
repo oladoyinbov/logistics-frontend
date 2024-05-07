@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/advance.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@400;600;900&display=swap">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.10/dist/cdn.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <title>LogisticKinggs</title>
+</head>
+
+<body>
+    <header>
+        <div class="h-auto w-screen mb-[20px]">
+            <!-- NAVBAR -->
+            <nav class="font-inter mx-auto h-auto w-full max-w-[1600px] lg:relative lg:top-0"
+                x-data="{isOpen: false, menuOne:false}">
+                <!-- CONTAINER -->
+                <div
+                    class="flex flex-col px-6 py-6 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-4 xl:px-20">
+                    <!-- SVG LOGO - YOU CAN REPLACE THIS -->
+                    <a href="#">
+                        <svg class="relative left-5 lg:inset-0" width="75" height="24" viewBox="0 0 75 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.256 18C12.344 18 15.848 14.424 15.848 9.264C15.848 4.032 12.272 0.456 7.088 0.456H0.944V18H7.256ZM6.8 3.288C10.424 3.288 12.608 5.544 12.608 9.264C12.608 12.912 10.472 15.168 6.968 15.168H4.016V3.288H6.8ZM23.5816 18.312C26.6776 18.312 28.8376 16.752 29.3416 14.16H26.6296C26.2936 15.288 25.2376 15.912 23.6296 15.912C21.6856 15.912 20.5816 14.856 20.3656 12.768L29.2936 12.744V11.856C29.2936 8.16 27.0376 5.784 23.4856 5.784C20.0056 5.784 17.5816 8.352 17.5816 12.072C17.5816 15.744 20.0536 18.312 23.5816 18.312ZM23.5096 8.184C25.2616 8.184 26.3896 9.264 26.3896 10.896H20.4376C20.7256 9.12 21.7816 8.184 23.5096 8.184ZM34.4814 18H37.3614L42.3054 6.144H39.2814L37.1214 11.592C36.6174 12.888 36.1854 14.136 36.0174 14.88C35.8734 14.232 35.4654 13.008 34.9614 11.592L32.8974 6.144H29.7774L34.4814 18ZM45.4526 3.768C46.4126 3.768 47.2286 2.976 47.2286 1.992C47.2286 1.008 46.4126 0.24 45.4526 0.24C44.4686 0.24 43.6766 1.008 43.6766 1.992C43.6766 2.976 44.4686 3.768 45.4526 3.768ZM41.1566 23.568C41.9246 23.784 42.3566 23.832 42.9086 23.832C45.4766 23.832 46.9166 22.2 46.9166 19.68V6.144H43.9886V19.344C43.9886 20.544 43.6526 21.12 42.6446 21.12C42.2846 21.12 42.0446 21.096 41.6366 20.976L41.1566 23.568ZM49.2457 12.048C49.2457 15.744 51.9097 18.288 55.5817 18.288C59.2537 18.288 61.9177 15.744 61.9177 12.048C61.9177 8.352 59.2537 5.808 55.5817 5.808C51.9097 5.808 49.2457 8.352 49.2457 12.048ZM52.1737 12.048C52.1737 9.888 53.5657 8.424 55.5817 8.424C57.5977 8.424 58.9897 9.888 58.9897 12.048C58.9897 14.208 57.5977 15.672 55.5817 15.672C53.5657 15.672 52.1737 14.208 52.1737 12.048ZM62.7613 23.496C63.4093 23.664 64.1293 23.76 64.9453 23.76C66.8893 23.76 68.1373 22.848 69.0253 20.64L74.8333 6.144H71.8093L68.5933 14.784L65.5453 6.144H62.4493L67.2253 18.504L66.8893 19.392C66.3853 20.784 65.6653 21.048 64.5133 21.048H62.7613V23.496Z"
+                                fill="black"></path>
+                        </svg>
+                    </a>
+                    <!-- MENU CONTENT 1 -->
+                    <div class="mt-14 flex flex-col space-y-8 lg:mt-0 lg:flex lg:flex-row lg:space-x-1 lg:space-y-0"
+                        x-bind:class="isOpen ? 'show' : 'hidden'">
+                        <!-- DROPDOWN -->
+                        <div class="relative flex flex-col">
+                            <a x-on:click.prevent="menuOne = !menuOne" href="#"
+                                class="flex flex-row rounded-lg lg:px-6 lg:py-4 lg:hover:bg-gray-50 lg:hover:text-gray-800"
+                                x-bind:class="menuOne ? 'text-gray-800 lg:border lg:border-gray-600 lg:bg-gray-50' : 'text-black lg:border lg:border-white' ">Component
+                                <svg x-bind:class="menuOne ? 'rotate-180' : 'rotate-0' " class="fill-current transition"
+                                    style="width: 24px; height: 24px" viewBox="0 0 24 24">
+                                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                                </svg>
+                            </a>
+                            <!-- DROP DOWN MENU ONE -->
+                            <div class="lg:px-75 z-50 flex w-full flex-col rounded-lg bg-white px-5 py-5 lg:absolute lg:top-20 lg:w-[800px] lg:flex-row lg:flex-wrap lg:py-7 lg:shadow-[0_16px_64px_-15px_rgba(45,96,173,0.15)] xl:w-[950px]"
+                                x-show="menuOne" x-on:click.outside="menuOne = false">
+                                <!-- ITEM -->
+                                <a class="flex grow flex-col rounded-lg px-5 py-5 hover:bg-gray-50 lg:basis-[248px] xl:px-8"
+                                    href="#">
+                                    <!-- ICON -->
+                                    <div class="relative">
+                                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="40" height="40" fill="#C4C4C4" />
+                                            <path
+                                                d="M18.4688 18.6875C18.8312 18.6875 19.125 18.3937 19.125 18.0312C19.125 17.6688 18.8312 17.375 18.4688 17.375C18.1063 17.375 17.8125 17.6688 17.8125 18.0312C17.8125 18.3937 18.1063 18.6875 18.4688 18.6875Z"
+                                                fill="black" />
+                                            <path
+                                                d="M24.3751 14.75H15.6251C15.3931 14.7503 15.1707 14.8425 15.0066 15.0066C14.8426 15.1706 14.7503 15.393 14.7501 15.625V22.6236L14.75 22.6253L14.7501 24.375C14.7503 24.607 14.8426 24.8294 15.0066 24.9934C15.1707 25.1575 15.3931 25.2497 15.6251 25.25H24.3751C24.607 25.2497 24.8294 25.1575 24.9935 24.9934C25.1575 24.8294 25.2498 24.607 25.2501 24.375V15.625C25.2498 15.393 25.1575 15.1706 24.9935 15.0066C24.8294 14.8425 24.607 14.7503 24.3751 14.75ZM22.8063 19.125C22.642 18.9612 22.4195 18.8691 22.1875 18.8691C21.9555 18.8691 21.733 18.9612 21.5688 19.125L19.1251 21.5688L17.9938 20.4375C17.8295 20.2737 17.607 20.1817 17.375 20.1817C17.1431 20.1817 16.9205 20.2737 16.7563 20.4375L15.6251 21.5687V15.625H24.3751L24.3754 20.6941L22.8063 19.125Z"
+                                                fill="black" />
+                                        </svg>
+                                    </div>
+                                    <!-- TEXT -->
+                                    <h2 class="font-inter mb-1 mt-5 text-lg font-medium text-[#160042]">Analytics
+                                    </h2>
+                                    <p class="font-inter max-w-[250px] text-sm text-gray-500 lg:max-w-[400px]">Get a
+                                        better understanding of where your traffic is coming from</p>
+                                </a>
+                                <!-- ITEM -->
+                                <a class="flex grow flex-col rounded-lg px-5 py-5 hover:bg-gray-50 lg:basis-[248px] xl:px-8"
+                                    href="#">
+                                    <!-- ICON -->
+                                    <div class="relative">
+                                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="40" height="40" fill="#C4C4C4" />
+                                            <path
+                                                d="M18.4688 18.6875C18.8312 18.6875 19.125 18.3937 19.125 18.0312C19.125 17.6688 18.8312 17.375 18.4688 17.375C18.1063 17.375 17.8125 17.6688 17.8125 18.0312C17.8125 18.3937 18.1063 18.6875 18.4688 18.6875Z"
+                                                fill="black" />
+                                            <path
+                                                d="M24.3751 14.75H15.6251C15.3931 14.7503 15.1707 14.8425 15.0066 15.0066C14.8426 15.1706 14.7503 15.393 14.7501 15.625V22.6236L14.75 22.6253L14.7501 24.375C14.7503 24.607 14.8426 24.8294 15.0066 24.9934C15.1707 25.1575 15.3931 25.2497 15.6251 25.25H24.3751C24.607 25.2497 24.8294 25.1575 24.9935 24.9934C25.1575 24.8294 25.2498 24.607 25.2501 24.375V15.625C25.2498 15.393 25.1575 15.1706 24.9935 15.0066C24.8294 14.8425 24.607 14.7503 24.3751 14.75ZM22.8063 19.125C22.642 18.9612 22.4195 18.8691 22.1875 18.8691C21.9555 18.8691 21.733 18.9612 21.5688 19.125L19.1251 21.5688L17.9938 20.4375C17.8295 20.2737 17.607 20.1817 17.375 20.1817C17.1431 20.1817 16.9205 20.2737 16.7563 20.4375L15.6251 21.5687V15.625H24.3751L24.3754 20.6941L22.8063 19.125Z"
+                                                fill="black" />
+                                        </svg>
+                                    </div>
+                                    <!-- TEXT -->
+                                    <h2 class="font-inter mb-1 mt-5 text-lg font-medium text-[#160042]">Engagement
+                                    </h2>
+                                    <p class="font-inter max-w-[250px] text-sm text-gray-500 lg:max-w-[400px]">Speak
+                                        directly to your customers in a more meaningful way</p>
+                                </a>
+                                <!-- ITEM -->
+                                <a class="flex grow flex-col rounded-lg px-5 py-5 hover:bg-gray-50 lg:basis-[248px] xl:px-8"
+                                    href="#">
+                                    <!-- ICON -->
+                                    <div class="relative">
+                                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="40" height="40" fill="#C4C4C4" />
+                                            <path
+                                                d="M18.4688 18.6875C18.8312 18.6875 19.125 18.3937 19.125 18.0312C19.125 17.6688 18.8312 17.375 18.4688 17.375C18.1063 17.375 17.8125 17.6688 17.8125 18.0312C17.8125 18.3937 18.1063 18.6875 18.4688 18.6875Z"
+                                                fill="black" />
+                                            <path
+                                                d="M24.3751 14.75H15.6251C15.3931 14.7503 15.1707 14.8425 15.0066 15.0066C14.8426 15.1706 14.7503 15.393 14.7501 15.625V22.6236L14.75 22.6253L14.7501 24.375C14.7503 24.607 14.8426 24.8294 15.0066 24.9934C15.1707 25.1575 15.3931 25.2497 15.6251 25.25H24.3751C24.607 25.2497 24.8294 25.1575 24.9935 24.9934C25.1575 24.8294 25.2498 24.607 25.2501 24.375V15.625C25.2498 15.393 25.1575 15.1706 24.9935 15.0066C24.8294 14.8425 24.607 14.7503 24.3751 14.75ZM22.8063 19.125C22.642 18.9612 22.4195 18.8691 22.1875 18.8691C21.9555 18.8691 21.733 18.9612 21.5688 19.125L19.1251 21.5688L17.9938 20.4375C17.8295 20.2737 17.607 20.1817 17.375 20.1817C17.1431 20.1817 16.9205 20.2737 16.7563 20.4375L15.6251 21.5687V15.625H24.3751L24.3754 20.6941L22.8063 19.125Z"
+                                                fill="black" />
+                                        </svg>
+                                    </div>
+                                    <!-- TEXT -->
+                                    <h2 class="font-inter mb-1 mt-5 text-lg font-medium text-[#160042]">Automations
+                                    </h2>
+                                    <p class="font-inter max-w-[250px] text-sm text-gray-500 lg:max-w-[400px]">Build
+                                        strategic funnels that will drive your customers to convert</p>
+                                </a>
+                                <!-- ITEM -->
+                                <a class="flex grow flex-col rounded-lg px-5 py-5 hover:bg-gray-50 lg:basis-[248px] xl:px-8"
+                                    href="#">
+                                    <!-- ICON -->
+                                    <div class="relative">
+                                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="40" height="40" fill="#C4C4C4" />
+                                            <path
+                                                d="M18.4688 18.6875C18.8312 18.6875 19.125 18.3937 19.125 18.0312C19.125 17.6688 18.8312 17.375 18.4688 17.375C18.1063 17.375 17.8125 17.6688 17.8125 18.0312C17.8125 18.3937 18.1063 18.6875 18.4688 18.6875Z"
+                                                fill="black" />
+                                            <path
+                                                d="M24.3751 14.75H15.6251C15.3931 14.7503 15.1707 14.8425 15.0066 15.0066C14.8426 15.1706 14.7503 15.393 14.7501 15.625V22.6236L14.75 22.6253L14.7501 24.375C14.7503 24.607 14.8426 24.8294 15.0066 24.9934C15.1707 25.1575 15.3931 25.2497 15.6251 25.25H24.3751C24.607 25.2497 24.8294 25.1575 24.9935 24.9934C25.1575 24.8294 25.2498 24.607 25.2501 24.375V15.625C25.2498 15.393 25.1575 15.1706 24.9935 15.0066C24.8294 14.8425 24.607 14.7503 24.3751 14.75ZM22.8063 19.125C22.642 18.9612 22.4195 18.8691 22.1875 18.8691C21.9555 18.8691 21.733 18.9612 21.5688 19.125L19.1251 21.5688L17.9938 20.4375C17.8295 20.2737 17.607 20.1817 17.375 20.1817C17.1431 20.1817 16.9205 20.2737 16.7563 20.4375L15.6251 21.5687V15.625H24.3751L24.3754 20.6941L22.8063 19.125Z"
+                                                fill="black" />
+                                        </svg>
+                                    </div>
+                                    <!-- TEXT -->
+                                    <h2 class="font-inter mb-1 mt-5 text-lg font-medium text-[#160042]">Security
+                                    </h2>
+                                    <p class="font-inter max-w-[250px] text-sm text-gray-500 lg:max-w-[400px]">Your
+                                        customers data will be safe and secure</p>
+                                </a>
+                                <!-- ITEM -->
+                                <a class="flex grow flex-col rounded-lg px-5 py-5 hover:bg-gray-50 lg:basis-[248px] xl:px-8"
+                                    href="#">
+                                    <!-- ICON -->
+                                    <div class="relative">
+                                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="40" height="40" fill="#C4C4C4" />
+                                            <path
+                                                d="M18.4688 18.6875C18.8312 18.6875 19.125 18.3937 19.125 18.0312C19.125 17.6688 18.8312 17.375 18.4688 17.375C18.1063 17.375 17.8125 17.6688 17.8125 18.0312C17.8125 18.3937 18.1063 18.6875 18.4688 18.6875Z"
+                                                fill="black" />
+                                            <path
+                                                d="M24.3751 14.75H15.6251C15.3931 14.7503 15.1707 14.8425 15.0066 15.0066C14.8426 15.1706 14.7503 15.393 14.7501 15.625V22.6236L14.75 22.6253L14.7501 24.375C14.7503 24.607 14.8426 24.8294 15.0066 24.9934C15.1707 25.1575 15.3931 25.2497 15.6251 25.25H24.3751C24.607 25.2497 24.8294 25.1575 24.9935 24.9934C25.1575 24.8294 25.2498 24.607 25.2501 24.375V15.625C25.2498 15.393 25.1575 15.1706 24.9935 15.0066C24.8294 14.8425 24.607 14.7503 24.3751 14.75ZM22.8063 19.125C22.642 18.9612 22.4195 18.8691 22.1875 18.8691C21.9555 18.8691 21.733 18.9612 21.5688 19.125L19.1251 21.5688L17.9938 20.4375C17.8295 20.2737 17.607 20.1817 17.375 20.1817C17.1431 20.1817 16.9205 20.2737 16.7563 20.4375L15.6251 21.5687V15.625H24.3751L24.3754 20.6941L22.8063 19.125Z"
+                                                fill="black" />
+                                        </svg>
+                                    </div>
+                                    <!-- TEXT -->
+                                    <h2 class="font-inter mb-1 mt-5 text-lg font-medium text-[#160042]">Integrations
+                                    </h2>
+                                    <p class="font-inter max-w-[250px] text-sm text-gray-500 lg:max-w-[400px]">
+                                        Connect with third-party tools that you’re already using</p>
+                                </a>
+                                <!-- ITEM -->
+                                <a class="flex grow flex-col rounded-lg px-5 py-5 hover:bg-gray-50 lg:basis-[248px] xl:px-8"
+                                    href="#">
+                                    <!-- ICON -->
+                                    <div class="relative">
+                                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="40" height="40" fill="#C4C4C4" />
+                                            <path
+                                                d="M18.4688 18.6875C18.8312 18.6875 19.125 18.3937 19.125 18.0312C19.125 17.6688 18.8312 17.375 18.4688 17.375C18.1063 17.375 17.8125 17.6688 17.8125 18.0312C17.8125 18.3937 18.1063 18.6875 18.4688 18.6875Z"
+                                                fill="black" />
+                                            <path
+                                                d="M24.3751 14.75H15.6251C15.3931 14.7503 15.1707 14.8425 15.0066 15.0066C14.8426 15.1706 14.7503 15.393 14.7501 15.625V22.6236L14.75 22.6253L14.7501 24.375C14.7503 24.607 14.8426 24.8294 15.0066 24.9934C15.1707 25.1575 15.3931 25.2497 15.6251 25.25H24.3751C24.607 25.2497 24.8294 25.1575 24.9935 24.9934C25.1575 24.8294 25.2498 24.607 25.2501 24.375V15.625C25.2498 15.393 25.1575 15.1706 24.9935 15.0066C24.8294 14.8425 24.607 14.7503 24.3751 14.75ZM22.8063 19.125C22.642 18.9612 22.4195 18.8691 22.1875 18.8691C21.9555 18.8691 21.733 18.9612 21.5688 19.125L19.1251 21.5688L17.9938 20.4375C17.8295 20.2737 17.607 20.1817 17.375 20.1817C17.1431 20.1817 16.9205 20.2737 16.7563 20.4375L15.6251 21.5687V15.625H24.3751L24.3754 20.6941L22.8063 19.125Z"
+                                                fill="black" />
+                                        </svg>
+                                    </div>
+                                    <!-- TEXT -->
+                                    <h2 class="font-inter mb-1 mt-5 text-lg font-medium text-[#160042]">Reports</h2>
+                                    <p class="font-inter max-w-[250px] text-sm text-gray-500 lg:max-w-[400px]">Get
+                                        detailed report that will help you make more informed decisions</p>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="#"
+                            class="font-inter rounded-lg lg:px-6 lg:py-4 lg:hover:bg-gray-50 lg:hover:text-gray-800">Templates</a>
+                        <a href="#"
+                            class="font-inter rounded-lg lg:px-6 lg:py-4 lg:hover:bg-gray-50 lg:hover:text-gray-800">Pricing</a>
+                        <a href="#"
+                            class="font-inter lg: rounded-lg pb-8 lg:px-6 lg:py-4 lg:hover:bg-gray-50 lg:hover:text-gray-800">FAQs</a>
+                    </div>
+                    <!-- MENU CONTENT 2 -->
+                    <div class="flex flex-col space-y-8 lg:flex lg:flex-row lg:space-x-3 lg:space-y-0"
+                        x-bind:class="isOpen ? 'show' : 'hidden'">
+                        <a href="#"
+                            class="font-inter rounded-lg lg:px-6 lg:py-4 lg:hover:bg-gray-50 lg:hover:text-gray-800">Sign
+                            Up</a>
+                        <a class="flex items-center font-inter rounded-lg bg-[#3F4195] px-8 py-4 text-center text-white hover:bg-transparent"
+                            href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                <g fill="currentColor">
+                                    <path
+                                        d="M15 2h-1c-2.828 0-4.243 0-5.121.879C8 3.757 8 5.172 8 8v8c0 2.828 0 4.243.879 5.121C9.757 22 11.172 22 14 22h1c2.828 0 4.243 0 5.121-.879C21 20.243 21 18.828 21 16V8c0-2.828 0-4.243-.879-5.121C19.243 2 17.828 2 15 2Z"
+                                        opacity=".6" />
+                                    <path
+                                        d="M8 8c0-1.538 0-2.657.141-3.5H8c-2.357 0-3.536 0-4.268.732C3 5.964 3 7.143 3 9.5v5c0 2.357 0 3.535.732 4.268c.732.732 1.911.732 4.268.732h.141C8 18.657 8 17.538 8 16V8Z"
+                                        opacity=".4" />
+                                    <path fill-rule="evenodd"
+                                        d="M14.53 11.47a.75.75 0 0 1 0 1.06l-2 2a.75.75 0 1 1-1.06-1.06l.72-.72H5a.75.75 0 0 1 0-1.5h7.19l-.72-.72a.75.75 0 1 1 1.06-1.06l2 2Z"
+                                        clip-rule="evenodd" />
+                                </g>
+                            </svg>
+                            Login
+                        </a>
+                    </div>
+                    <!-- BURGER MENU -->
+                    <a href="#" class="absolute right-5 lg:hidden" x-on:click.prevent="isOpen = !isOpen">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.75 12H20.25" stroke="#160042" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            <path d="M3.75 6H20.25" stroke="#160042" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            <path d="M3.75 18H20.25" stroke="#160042" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </svg>
+                    </a>
+                </div>
+            </nav>
+        </div>
+
+
+        <!-- Hero -->
+        <div class="max-w-[85rem] mt-10 mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Grid -->
+            <div class="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
+                <div>
+                    <h1
+                        class="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white">
+                        Logistics that Cares: Your Business, <span class="text-[#3F4195]">Our Priority.</span></h1>
+                    <p class="mt-3 text-lg text-gray-800 dark:text-neutral-400">
+                        Experience the power of efficient logistics.
+                        We connect businesses and individuals with fast, reliable, and secure transportation solutions.
+                    </p>
+
+                    <!-- Buttons -->
+                    <div class="mt-7 grid gap-3 w-full sm:inline-flex">
+                        <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-[#3F4195] text-white hover:bg-[#4b4dac] disabled:opacity-50 disabled:pointer-events-none"
+                            href="#">
+                            Get started
+                            <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m9 18 6-6-6-6" />
+                            </svg>
+                        </a>
+                        <a class="py-3 px-4 p-5 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
+                            href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 50 50">
+                                <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                    <path stroke="#306CFE"
+                                        d="M33.333 18.75h4.855a2.08 2.08 0 0 1 2.083 1.75l3.479 20.833a2.082 2.082 0 0 1-2.083 2.417H8.333a2.082 2.082 0 0 1-2.083-2.417L9.73 20.5a2.08 2.08 0 0 1 2.082-1.75h4.855" />
+                                    <path stroke="#344054"
+                                        d="M33.333 14.583a8.333 8.333 0 0 0-16.666 0C16.667 22.917 25 31.25 25 31.25s8.333-8.333 8.333-16.667" />
+                                </g>
+                            </svg>
+                            Track Orders
+                            <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m9 18 6-6-6-6" />
+                            </svg>
+                        </a>
+                    </div>
+                    <!-- End Buttons -->
+
+
+                </div>
+                <!-- End Col -->
+
+                <div class="relative ms-4">
+                    <img class="w-full rounded-md" src="./assets/images/back.jpg" alt="Image Description">
+                    <div
+                        class="absolute inset-0 -z-[1] bg-gradient-to-tr from-gray-200 via-white/0 to-white/0 size-full rounded-md mt-4 -mb-4 me-4 -ms-4 lg:mt-6 lg:-mb-6 lg:me-6 lg:-ms-6 dark:from-neutral-800 dark:via-neutral-900/0 dark:to-neutral-900/0">
+                    </div>
+
+                    <!-- SVG-->
+                    <div class="absolute bottom-0 start-0">
+                        <svg class="w-2/3 ms-auto h-auto text-white dark:text-neutral-900" width="630" height="451"
+                            viewBox="0 0 630 451" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="531" y="352" width="99" height="99" fill="currentColor" />
+                            <rect x="140" y="352" width="106" height="99" fill="currentColor" />
+                            <rect x="482" y="402" width="64" height="49" fill="currentColor" />
+                            <rect x="433" y="402" width="63" height="49" fill="currentColor" />
+                            <rect x="384" y="352" width="49" height="50" fill="currentColor" />
+                            <rect x="531" y="328" width="50" height="50" fill="currentColor" />
+                            <rect x="99" y="303" width="49" height="58" fill="currentColor" />
+                            <rect x="99" y="352" width="49" height="50" fill="currentColor" />
+                            <rect x="99" y="392" width="49" height="59" fill="currentColor" />
+                            <rect x="44" y="402" width="66" height="49" fill="currentColor" />
+                            <rect x="234" y="402" width="62" height="49" fill="currentColor" />
+                            <rect x="334" y="303" width="50" height="49" fill="currentColor" />
+                            <rect x="581" width="49" height="49" fill="currentColor" />
+                            <rect x="581" width="49" height="64" fill="currentColor" />
+                            <rect x="482" y="123" width="49" height="49" fill="currentColor" />
+                            <rect x="507" y="124" width="49" height="24" fill="currentColor" />
+                            <rect x="531" y="49" width="99" height="99" fill="currentColor" />
+                        </svg>
+                    </div>
+                    <!-- End SVG-->
+                </div>
+                <!-- End Col -->
+            </div>
+            <!-- End Grid -->
+        </div>
+        <!-- End Hero -->
+    </header>
+
+
+    <!-- Section HIW -->
+    <section>
+        <!-- Container -->
+        <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
+            <!-- Text -->
+            <p class="text-center text-sm font-bold uppercase">3 easy steps to:</p>
+            <h2 class="text-center text-3xl font-bold md:text-5xl">Create An Order</h2>
+            <p class="mx-auto mb-12 mt-4 max-w-lg text-center text-[#647084]">
+                Get your delivery order started with LogisticKings in 3 easy steps!
+            </p>
+            <!-- Content -->
+            <div class="grid gap-5 sm:grid-cols-2 md:grid-cols-3">
+                <div class="flex flex-col gap-4 rounded-md border border-solid border-[#dfdfdf] bg-white p-8 md:p-10">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-full bg-[#2224A5]">
+                        <p class="text-xl font-bold text-white">1</p>
+                    </div>
+                    <p class="text-xl font-semibold">Sign Up</p>
+                    <p class="text-sm text-[#647084]">Register on our website as a customer and confirm your identity.</p>
+                </div>
+                <div class="flex flex-col gap-4 rounded-md border border-solid border-[#dfdfdf] bg-white p-8 md:p-10">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-full bg-[#2224A5]">
+                        <p class="text-xl font-bold text-white">2</p>
+                    </div>
+                    <p class="text-xl font-semibold">Create an Order</p>
+                    <p class="text-sm text-[#647084]">
+                        Start your delivery order by clicking the 'Place Order' button on our homepage 
+                        and fill out the simple form to get your order on its way.</p>
+                </div>
+                <div class="flex flex-col gap-4 rounded-md border border-solid border-[#dfdfdf] bg-white p-8 md:p-10">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-full bg-[#2224A5]">
+                        <p class="text-xl font-bold text-white">3</p>
+                    </div>
+                    <p class="text-xl font-semibold">Done</p>
+                    <p class="text-sm text-[#647084]">Assign a rider and wait for your order to picked by the assigned rider.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="block bg-black">
+        <!-- Container -->
+        <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
+          <!-- Footer Content -->
+          <div class="flex flex-col justify-between md:flex-row">
+            <h2 class="mb-4 w-full max-w-[560px] text-3xl font-extrabold text-white md:text-5xl">
+              <span class="text-[#7d7ff3]">Smart logistics</span> for a Faster world
+            </h2>
+            <div class="mt-8 flex-none md:mt-0">
+              <div class="mb-4 flex max-w-[272px] items-start">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 100 100" class="mr-3 inline-block">
+                    <circle cx="50" cy="50" r="50" fill="#6BC9F2"/>
+                    <clipPath id="flatUiFlag0">
+                        <circle cx="50" cy="50" r="50"/>
+                    </clipPath>
+                    <path fill="#fff" fill-rule="evenodd" d="M29 99a2.5 2.5 0 1 1-5 0V17.5a2.5 2.5 0 1 1 5 0V99z" clip-path="url(#flatUiFlag0)" clip-rule="evenodd"/>
+                    <path fill="#F29C1F" d="M100 73H60V25h40l-7 24z"/>
+                    <path fill="#E57E25" fill-rule="evenodd" d="M60 73V27l9-8v46l-9 8z" clip-rule="evenodd"/>
+                    <path fill="#fff" d="m77.017 43.501l-10.791 3.625L65.933 58l-6.962-8.633L48 52.463l6.488-8.962L48 34.539l10.972 3.096L65.933 29l.293 10.875l10.791 3.626z" opacity=".6"/>
+                    <path fill="#F0C419" d="M29 17h40v48H29z"/>
+                    <path fill="#fff" d="m69 30.157l-6.028 7.478L52 34.539l6.488 8.962L52 52.463l10.972-3.097L69 56.843z"/>
+                </svg> 
+                <p class="text-white">No 46, Around Permanent Site.</p>
+              </div>
+              <div class="mb-4 flex max-w-[272px] items-start">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 100 100" class="mr-3 inline-block">
+                    <path fill="#D35400" fill-rule="evenodd" d="M96.015 38.988H4.006c-1.104 0-2 .897-2 2.005v57.001c0 1.108.896 2.006 2 2.006h92.009a2.003 2.003 0 0 0 2.001-2.006V40.993a2.003 2.003 0 0 0-2.001-2.005z" clip-rule="evenodd"/>
+                    <path fill="#ECF0F1" fill-rule="evenodd" d="M5 15.974v82.004C5 99.095 5.896 100 7 100h86.001A2.01 2.01 0 0 0 95 97.979V1.99a2.01 2.01 0 0 0-1.999-2.021l-71.997.008L5 15.974z" clip-rule="evenodd"/>
+                    <path d="m40 72l54.997-33L95 45.98L51.028 72H40z" opacity=".1"/>
+                    <path fill="#F39C12" fill-rule="evenodd" d="M2 97.991c0 1.11.895 2.009 2 2.009h92c1.104 0 2-.899 2-2.009V42L50 71L2 42v55.991z" clip-rule="evenodd"/>
+                    <path fill="#F1C40F" fill-rule="evenodd" d="m5 15.974l16.001.01V0L5 15.974z" clip-rule="evenodd"/>
+                    <path fill="#F1C40F" d="m2 42l.052 54L50 71L2 42z"/>
+                    <path fill="#E57E22" d="M98 42L50 71l48 25z"/>
+                    <path fill-rule="evenodd" d="M98 97.991V96L50 71l47.328 28.482c.409-.367.672-.896.672-1.491zm-96 0V96l48-25L2.672 99.482A1.998 1.998 0 0 1 2 97.991z" clip-rule="evenodd" opacity=".3"/>
+                </svg> 
+                <p class="text-white">support@Logistickinggs.com.ng</p>
+              </div>
+            </div>
+          </div>
+          <!-- Divider -->
+          <div class="mb-20 mt-20 w-full border-[0.5px] border-solid border-[#101010]"></div>
+          <!-- Footer Footnotes -->
+          <div class="flex flex-col items-center justify-between md:flex-row">
+            <div class="mb-4 text-center font-semibold sm:text-center md:mb-0">
+              <a href="#" class="inline-block py-1.5 pr-6 text-[#636262] transition hover:text-white sm:py-2 sm:pr-6 lg:pr-12">About</a>
+              <a href="#" class="inline-block py-1.5 pr-6 text-[#636262] transition hover:text-white sm:py-2 sm:pr-6 lg:pr-12">Contact</a>
+              <a href="#" class="inline-block py-1.5 pr-6 text-[#636262] transition hover:text-white sm:py-2 sm:pr-6 lg:pr-12">Career</a>
+              <a href="#" class="inline-block py-1.5 pr-6 text-[#636262] transition hover:text-white sm:py-2 sm:pr-6 lg:pr-12">Help</a>
+            </div>
+            <p class="text-[#636262]">© Copyright 2024. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+
+</body>
+
+</html>
