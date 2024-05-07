@@ -1698,6 +1698,11 @@ select {
   color: transparent;
 }
 
+.hover\:text-\[\#3F4195\]:hover {
+  --tw-text-opacity: 1;
+  color: rgb(63 65 149 / var(--tw-text-opacity));
+}
+
 .focus\:border-blue-500:focus {
   --tw-border-opacity: 1;
   border-color: rgb(59 130 246 / var(--tw-border-opacity));
@@ -2246,6 +2251,11 @@ select {
   .dark\:hover\:text-\[\#2224A5\]:hover {
     --tw-text-opacity: 1;
     color: rgb(34 36 165 / var(--tw-text-opacity));
+  }
+
+  .dark\:hover\:text-\[\#3F4195\]:hover {
+    --tw-text-opacity: 1;
+    color: rgb(63 65 149 / var(--tw-text-opacity));
   }
 
   .dark\:focus\:bg-slate-800:focus {
