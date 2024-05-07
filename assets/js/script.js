@@ -1,3 +1,5 @@
+import preline from 'https://cdn.jsdelivr.net/npm/preline@2.1.0/+esm'
+
 $(document).ready(() => {
     let navbar_menu = $('#navbar_menu')
     let navbar_items = $('#navbar_items')
