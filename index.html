@@ -3,15 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>LogisticKinggs</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/advance.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@400;600;900&display=swap">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.10/dist/cdn.min.js"></script>
     <script src="./assets/js/script.js"></script>
-    <title>LogisticKinggs</title>
 </head>
 
 <body>
@@ -48,7 +46,9 @@
 
                         <div class="md:hidden mr-3">
                             <button type="button"
-                                class="hs-collapse-toggle size-[40px] p-5 flex justify-center items-center text-sm font-semibold rounded-xl border border-gray-200 text-black hover:bg-black hover:text-transparent disabled:opacity-50 disabled:pointer-events-none dark:text-[#3F4195] dark:border-[#2224A5] dark:hover:bg-[#2224A5]"
+                                class="hs-collapse-toggle size-[40px] p-5 flex justify-center items-center text-sm font-semibold rounded-xl border
+                                 border-gray-200 text-black hover:bg-black hover:text-transparent disabled:opacity-50 
+                                 disabled:pointer-events-none dark:text-[#3F4195] dark:border-[#2224A5] dark:hover:bg-[#2224A5] dark:hover:text-white"
                                 data-hs-collapse="#navbar-collapse-with-animation"
                                 aria-controls="navbar-collapse-with-animation" aria-label="Toggle navigation">
                                 <svg class="hs-collapse-open:hidden flex-shrink-0 size-4"
@@ -126,9 +126,9 @@
                             </svg>
                         </a>
                         <a class="py-3 px-4 p-5 inline-flex justify-center items-center gap-x-2 text-sm 
-                            font-medium rounded-lg border border-gray-200 bg-white text-[#2224A5] dark:text-black shadow-sm 
+                            font-medium rounded-lg border border-gray-200 bg-white text-[#3F4195] dark:text-[#3F4195] shadow-sm 
                             hover:bg-slate-100 disabled:opacity-50 disabled:pointer-events-none dark:bg-white
-                            dark:border-[#2224A5] dark:hover:bg-[#2224A5]" href="#">
+                            dark:border-[#2224A5] dark:hover:bg-white dark:hover:text-[#393a8a]" href="#">
                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 50 50">
                                 <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
                                     <path stroke="#306CFE"
@@ -194,7 +194,7 @@
         <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32 animate-fade-in-right">
             <!-- Text -->
             <p class="text-center text-sm font-bold uppercase">3 easy steps to:</p>
-            <h2 class="text-center text-3xl font-bold md:text-5xl">Create An Order</h2>
+            <h2 class="text-center text-3xl font-900 md:text-5xl">Create An <span class="text-[#5557cf] animate-zoom-in">Order</span></h2>
             <p class="mx-auto mb-12 mt-4 max-w-lg text-center text-[#647084]">
                 Get your delivery order started with LogisticKings in 3 easy steps!
             </p>
@@ -231,10 +231,10 @@
 
 
     <!-- Companies Features -->
-    <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto animate-flip-in-y">
+    <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto animate-fade-in-right">
         <!-- Text -->
-        <h2 class="text-center text-3xl font-bold md:text-5xl">
-            Empowering Logistics <span class="text-[#5557cf]">Companies</span>
+        <h2 class="text-center text-3xl font-900 md:text-5xl">
+            Empowering Logistics <span class="text-[#5557cf] animate-zoom-in">Companies</span>
         </h2>
         <p class="mx-auto mb-12 mt-4 max-w-lg text-center text-[#647084]">
             Streamline Your Delivery Operations with Our Platform!
@@ -255,8 +255,7 @@
                             Unlock New Opportunities for Your Logistics Business
                         </h2>
                         <p class="text-slate-800 dark:text-slate-400">
-                            Our platform provides a seamless experience for logistics companies to accept and fulfill
-                            delivery orders, track shipments,
+                            Our platform provides a seamless experience for logistics companies to accept delivery orders, track shipments,
                             and analyze performance metrics. Join us today and take your logistics business to the next
                             level!
                         </p>
@@ -265,9 +264,9 @@
 
                     <!-- List -->
                     <ul class="space-y-2 sm:space-y-4">
-                        <li class="flex space-x-3">
+                        <li class="flex space-x-3 mb-4">
                             <span
-                                class="mt-0.5 size-5 flex justify-center items-center rounded-full bg-blue-50 text-blue-600 dark:bg-blue-800/30 dark:text-blue-500">
+                                class="mt-0.5 size-5 flex justify-center items-center rounded-full bg-blue-50 text-[#5557cf] dark:bg-[#5557cf]/30 dark:text-[#373883]">
                                 <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24"
                                     height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round">
@@ -276,29 +275,15 @@
                             </span>
 
                             <span class="text-sm sm:text-base text-gray-500 dark:text-neutral-500">
-                                Accept <span class="font-bold">Customer Orders</span> with Ease
-                            </span>
-                        </li>
-
-                        <li class="flex space-x-3">
-                            <span
-                                class="mt-0.5 size-5 flex justify-center items-center rounded-full bg-blue-50 text-blue-600 dark:bg-blue-800/30 dark:text-blue-500">
-                                <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24"
-                                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="20 6 9 17 4 12" />
-                                </svg>
-                            </span>
-
-                            <span class="text-sm sm:text-base text-gray-500 dark:text-neutral-500">
-                                On-Click Fast Withdrawal
+                                Accept & Deliver <span class="font-bold">Customer Orders</span> with Ease
                             </span>
                         </li>
 
                         <li class="flex content-between space-x-3">
-                            <a class="py-3 px-16 flex content-between gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                            <a class="py-3 px-16 flex content-between gap-x-2 text-sm font-semibold rounded-lg border 
+                            border-transparent bg-[#5557cf] text-white hover:bg-[#393a92] disabled:opacity-50 disabled:pointer-events-none"
                                 href="#">
-                                Register as Company
+                                Join Us as Company
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                     fill="#5557cf">
                                     <path fill="currentColor"
@@ -366,8 +351,7 @@
                     <div class="hs-accordion pb-3 active" id="hs-basic-with-title-and-arrow-stretched-heading-one">
                         <button
                             class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full 
-                            md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-[#3F4195]
-                             dark:text-black dark:hover:text-neutral-400"
+                            md:text-lg font-semibold text-start text-gray-800 rounded-lg transition dark:text-black hover:text-[#3F4195]"
                             aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-one">
                             What is Logisticsking?
                             <svg class="hs-accordion-active:hidden block flex-shrink-0 size-5 dark:text-light text-black dark:text-[#3F4195]"
@@ -397,8 +381,7 @@
                     <div class="hs-accordion pt-6 pb-3" id="hs-basic-with-title-and-arrow-stretched-heading-two">
                         <button
                             class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full 
-                            md:text-lg font-semibold text-start text-black rounded-lg transition hover:text-[#3F4195]
-                             dark:text-black dark:hover:text-neutral-400"
+                            md:text-lg font-semibold text-start text-black rounded-lg transition dark:text-black hover:text-[#3F4195]"
                             aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-two">
                             How do I register as a customer on Logisticsking?
                             <svg class="hs-accordion-active:hidden block flex-shrink-0 size-5 text-black dark:text-[#3F4195]"
@@ -428,8 +411,7 @@
                         <button
                             class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between 
                             gap-x-3 w-full md:text-lg font-semibold text-start
-                             text-gray-800 rounded-lg transition hover:text-[#3F4195] dark:text-black
-                            dark:hover:text-neutral-400"
+                            rounded-lg transition text-black hover:text-[#3F4195]"
                             aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-three">
                             How do I register my logistics company on Logisticsking?
                             <svg class="hs-accordion-active:hidden block flex-shrink-0 size-5 text-black dark:text-[#3F4195]"
@@ -459,17 +441,16 @@
                     <div class="hs-accordion pt-6 pb-3" id="hs-basic-with-title-and-arrow-stretched-heading-four">
                         <button
                             class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between 
-                            gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition
-                             hover:text-gray-500 dark:text-black dark:hover:text-[#3F4195]"
+                            gap-x-3 w-full md:text-lg font-semibold text-start rounded-lg transition text-black hover:text-[#3F4195]"
                             aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-four">
                             Can I track my shipments in real-time on Logisticsking?
-                            <svg class="hs-accordion-active:hidden block flex-shrink-0 size-5 text-black group-hover:text-gray-500 dark:text-neutral-400"
+                            <svg class="hs-accordion-active:hidden block flex-shrink-0 size-5 text-[#3F4195]"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <path d="m6 9 6 6 6-6" />
                             </svg>
-                            <svg class="hs-accordion-active:block hidden flex-shrink-0 size-5 text-black group-hover:text-gray-500 dark:text-neutral-400"
+                            <svg class="hs-accordion-active:block hidden flex-shrink-0 size-5 text-[#3F4195]"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
@@ -489,17 +470,16 @@
                     <div class="hs-accordion pt-6 pb-3" id="hs-basic-with-title-and-arrow-stretched-heading-five">
                         <button
                             class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full 
-                            md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-[#3F4195]
-                             dark:text-black dark:hover:text-neutral-400"
+                            md:text-lg font-semibold text-start rounded-lg transition text-black hover:text-[#3F4195]"
                             aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-five">
                             How do I contact Logisticsking's support team?
-                            <svg class="hs-accordion-active:hidden block flex-shrink-0 size-5 text-black group-hover:text-gray-500 dark:text-neutral-400"
+                            <svg class="hs-accordion-active:hidden block flex-shrink-0 size-5 text-[#3F4195]"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <path d="m6 9 6 6 6-6" />
                             </svg>
-                            <svg class="hs-accordion-active:block hidden flex-shrink-0 size-5 text-black group-hover:text-gray-500 dark:text-neutral-400"
+                            <svg class="hs-accordion-active:block hidden flex-shrink-0 size-5 dark:text-[#3F4195]"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
@@ -520,8 +500,7 @@
                     <div class="hs-accordion pt-6 pb-3" id="hs-basic-with-title-and-arrow-stretched-heading-six">
                         <button
                             class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full 
-                            md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-[#3F4195]
-                             dark:text-black dark:hover:text-neutral-400"
+                            md:text-lg font-semibold text-start rounded-lg transition text-black hover:text-[#3F4195]"
                             aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-six">
                             How do I place a delivery order on Logisticsking?
                             <svg class="hs-accordion-active:hidden block flex-shrink-0 size-5 text-black dark:text-[#3F4195]"

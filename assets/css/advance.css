@@ -1,9 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+html {
+    box-sizing: border-box;
+    margin: 0%;
+    overflow-x: hidden;
+}
+
+p, a {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+}
+
 .hide {
     display: none;
 }
 
 .show {
     display: initial;
+}
+
+/** Fonts **/
+.font-900 {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
 }
 
 /** NavBar Styles **/
