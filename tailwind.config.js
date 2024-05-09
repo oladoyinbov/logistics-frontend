@@ -4,7 +4,9 @@ import animations from '@midudev/tailwind-animations'
 module.exports = {
   content: [
     'node_modules/preline/dist/*.js',
-    'index.html'
+    'index.html',
+    'pages.html',
+    'tracking-system.html'
   ],
   theme: {
     extend: {},
